@@ -69,5 +69,27 @@ class FavoriteMascotasActivity : AppCompatActivity() {
     private fun getDummyMascotas(): List<Mascota> {
         // Crear una lista de mascotas dummy hardcodeadas (5 mascotas)
         val mascotas = mutableListOf<Mascota>()
-        mascotas.add(Mascota("Mascota 1", "Raza 1", 3, "Macho", "foto1.jpg", "Descripción 1", 0))
-        mascotas.add(Mascota("Mascota 2", "Raza 2", 2, "Hembra", "foto2.jpg", "Descripción 2",
+               mascotas.add(Mascota("Mascota 1", "Raza 1", 3, "Macho", "foto1.jpg", "Descripción 1", 0))
+        mascotas.add(Mascota("Mascota 2", "Raza 2", 2, "Hembra", "foto2.jpg", "Descripción 2", 0))
+        mascotas.add(Mascota("Mascota 3", "Raza 3", 4, "Macho", "foto3.jpg", "Descripción 3", 0))
+        mascotas.add(Mascota("Mascota 4", "Raza 4", 1, "Hembra", "foto4.jpg", "Descripción 4", 0))
+        mascotas.add(Mascota("Mascota 5", "Raza 5", 5, "Macho", "foto5.jpg", "Descripción 5", 0))
+        return mascotas
+    }
+}
+    class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Configurar el botón de acción en la barra de herramientas
+        val actionButton: ImageButton = findViewById(R.id.actionButton)
+        actionButton.setOnClickListener {
+            val intent = Intent(this, FavoriteMascotasActivity::class.java)
+            startActivity(intent)
+        }
+    }
+}
+
+    
